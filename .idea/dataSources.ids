@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - buildingmantainance@localhost [2]" uuid="22007a50-3601-4987-baec-126304fd43d7">
+    <database-info product="MySQL" version="5.5.43" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="buildingmantainance"/>
+    <table name="building" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="building_name" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="zipCode" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="street_no" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="street_name" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="buildingID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="buildingID"/>
+      <index name="unique_buildingID" unique="true" columns="buildingID"/>
+    </table>
+  </data-source>
+</component>
