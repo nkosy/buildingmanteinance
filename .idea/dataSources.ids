@@ -15,7 +15,98 @@
       <column name="city" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
       <column name="buildingID" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <primary-key name="PRIMARY" columns="buildingID"/>
+      <exported-key name="FK_tkq3er633icrwrl39q96o2f6h" table="job" schema="" catalog="buildingmantainance" columns="building_id"/>
+      <exported-key name="FK_9ph3by6fquyk3bh57lc4kihom" table="level" schema="" catalog="buildingmantainance" columns="building_id"/>
       <index name="unique_buildingID" unique="true" columns="buildingID"/>
+    </table>
+    <table name="building_manager" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="manager_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="managerID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <primary-key name="PRIMARY" columns="managerID"/>
+      <index name="unique_managerID" unique="true" columns="managerID"/>
+    </table>
+    <table name="facility" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="facility_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="facility_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="office_space_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="facility_id"/>
+      <foreign-key name="FK_7f4a1yo898obky972fol7xh8" columns="office_space_id" ref-table="office_space" ref-schema="" ref-catalog="buildingmantainance" ref-columns="office_space_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_myn84w3uirrnyv9fpj0t9jycd" table="item" schema="" catalog="buildingmantainance" columns="office_space_id"/>
+      <index name="FK_7f4a1yo898obky972fol7xh8" unique="false" columns="office_space_id"/>
+    </table>
+    <table name="item" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="item_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="cost" sqlType="DOUBLE" precision="22" scale="0" nullable="false" jdbcType="8"/>
+      <column name="item_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_mantained" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="job_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="mantainance_log_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="office_space_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="item_id"/>
+      <foreign-key name="FK_myn84w3uirrnyv9fpj0t9jycd" columns="office_space_id" ref-table="facility" ref-schema="" ref-catalog="buildingmantainance" ref-columns="facility_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_rpiy98t9j8twgcpop0runopon" columns="mantainance_log_id" ref-table="mantainance_log" ref-schema="" ref-catalog="buildingmantainance" ref-columns="mantainance_log_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_sl1jq34mncakcxbpi9o8nbn11" columns="job_id" ref-table="job" ref-schema="" ref-catalog="buildingmantainance" ref-columns="job_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_myn84w3uirrnyv9fpj0t9jycd" unique="false" columns="office_space_id"/>
+      <index name="FK_rpiy98t9j8twgcpop0runopon" unique="false" columns="mantainance_log_id"/>
+      <index name="FK_sl1jq34mncakcxbpi9o8nbn11" unique="false" columns="job_id"/>
+    </table>
+    <table name="job" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="job_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="job_description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="subcontractor_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="building_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="job_id"/>
+      <foreign-key name="FK_tkq3er633icrwrl39q96o2f6h" columns="building_id" ref-table="building" ref-schema="" ref-catalog="buildingmantainance" ref-columns="buildingID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_6sr0x3hg4c1kuukja81423y8u" columns="subcontractor_id" ref-table="subcontractor" ref-schema="" ref-catalog="buildingmantainance" ref-columns="subcontractor_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_sl1jq34mncakcxbpi9o8nbn11" table="item" schema="" catalog="buildingmantainance" columns="job_id"/>
+      <index name="FK_6sr0x3hg4c1kuukja81423y8u" unique="false" columns="subcontractor_id"/>
+      <index name="FK_tkq3er633icrwrl39q96o2f6h" unique="false" columns="building_id"/>
+    </table>
+    <table name="level" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="level_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="building_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="level_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="level_id"/>
+      <foreign-key name="FK_9ph3by6fquyk3bh57lc4kihom" columns="building_id" ref-table="building" ref-schema="" ref-catalog="buildingmantainance" ref-columns="buildingID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_atimkhjifrauvqr58usf23mrd" table="office_space" schema="" catalog="buildingmantainance" columns="level_id"/>
+      <index name="FK_9ph3by6fquyk3bh57lc4kihom" unique="false" columns="building_id"/>
+    </table>
+    <table name="mantainance_log" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="mantainance_log_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="mantainance_log_id"/>
+      <exported-key name="FK_rpiy98t9j8twgcpop0runopon" table="item" schema="" catalog="buildingmantainance" columns="mantainance_log_id"/>
+    </table>
+    <table name="office_space" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="office_space_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="office_space_no" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="level_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="tenant_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="office_space_id"/>
+      <foreign-key name="FK_f7chh3d8xde0bctlkh5tq23my" columns="tenant_id" ref-table="tenant" ref-schema="" ref-catalog="buildingmantainance" ref-columns="tenant_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_atimkhjifrauvqr58usf23mrd" columns="level_id" ref-table="level" ref-schema="" ref-catalog="buildingmantainance" ref-columns="level_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_7f4a1yo898obky972fol7xh8" table="facility" schema="" catalog="buildingmantainance" columns="office_space_id"/>
+      <index name="FK_atimkhjifrauvqr58usf23mrd" unique="false" columns="level_id"/>
+      <index name="FK_f7chh3d8xde0bctlkh5tq23my" unique="false" columns="tenant_id"/>
+    </table>
+    <table name="subcontractor" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="subcontractor_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="subcontractor_manager_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="subcontractor_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="subcontractor_id"/>
+      <exported-key name="FK_6sr0x3hg4c1kuukja81423y8u" table="job" schema="" catalog="buildingmantainance" columns="subcontractor_id"/>
+    </table>
+    <table name="subcontractor_manager" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="subcontractor_manager_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="subcontractor_manager_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="subcontractor_manager_id"/>
+    </table>
+    <table name="tenant" schema="" catalog="buildingmantainance" type="TABLE">
+      <column name="tenant_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
+      <column name="tenant_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="tenant_id"/>
+      <exported-key name="FK_f7chh3d8xde0bctlkh5tq23my" table="office_space" schema="" catalog="buildingmantainance" columns="tenant_id"/>
     </table>
   </data-source>
 </component>

@@ -1,10 +1,8 @@
 package buildingmaintenance.domain;
 
-import javax.persistence.Embedded;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /*@author       Nkosy
  *@Date         23/042015
@@ -20,13 +18,13 @@ public class Building implements Serializable {
     @Embedded
     private Address building_address;
 
-    /*/A list of mantainance jobs that have been done on a particular building
+    //A list of mantainance jobs that have been done on a particular building
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "building_id")
     private List<Job> jobs;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "building_id")
-    private List<Level> levels;*/
+    private List<Level> levels;
 
     private Building() {
     }
@@ -46,8 +44,8 @@ public class Building implements Serializable {
 
         private String building_name;
         private Address building_address;
-        //private List<Job> jobs;
-        //private List<Level> levels;
+        private List<Job> jobs;
+        private List<Level> levels;
 
         public Builder(String name) {
             this.building_name = name;
@@ -58,16 +56,16 @@ public class Building implements Serializable {
             return this;
         }
 
-        /*public Builder building_name(String value){
+        public Builder building_name(String value){
          this.building_name = value;
          return this;
-         }*/
+         }
         public Builder building_address(Address value) {
             this.building_address = value;
             return this;
         }
 
-       /* public Builder jobs(List<Job> value) {
+       public Builder jobs(List<Job> value) {
             this.jobs = value;
             return this;
         }
@@ -75,14 +73,14 @@ public class Building implements Serializable {
         public Builder levels(List<Level> value) {
             this.levels = value;
             return this;
-        }*/
+        }
 
         public Builder copy(Building value) {
             this.buildingID = value.buildingID;
 
             this.building_name = value.building_name;
-            //this.jobs = value.jobs;
-            //this.levels = value.levels;
+            this.jobs = value.jobs;
+            this.levels = value.levels;
             return this;
         }
 
@@ -103,11 +101,11 @@ public class Building implements Serializable {
         return building_address;
     }
 
-   /* public List<Job> getJobs() {
+    public List<Job> getJobs() {
         return jobs;
-    }*/
-    /*public List<Level> getLevels() {
+    }
+    public List<Level> getLevels() {
         return levels;
-    }*/
+    }
     
 }

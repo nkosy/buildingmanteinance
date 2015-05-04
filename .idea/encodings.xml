@@ -2,5 +2,26 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/BuildingManagerFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/FacilityFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/ItemFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/JobFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/LevelFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/MantainanceLogFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/OfficeSpaceFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/SubcontractorFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/SubcontractorManagerFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/TenantFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/BuildingManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Facility.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Item.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Job.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Level.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/MantainanceLog.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/OfficeSpace.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Subcontractor.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/SubcontractorManager.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/Tenant.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/BuildingMaintenanceTestSuite.java" charset="windows-1252" />
   </component>
 </project>
