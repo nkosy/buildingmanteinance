@@ -254,16 +254,18 @@ public class BuildingMaintenanceTestSuite {
     @Test
     public void createSubcontractor() throws Exception {
         List<Job> jobs = new ArrayList<Job>();
+        SubcontractorManager manager = SubcontractorManagerFactory.createManager("John");
         Subcontractor subcontractor = SubcontractorFactory.createSubcontractor("ABC-Electrical",
-                123456789, jobs);
+                manager, jobs);
         Assert.assertEquals("ABC-Electrical", subcontractor.getSubcontractor_name());
     }
 
     @Test
     public void updateSubcontractor() throws Exception {
         List<Job> jobs = new ArrayList<Job>();
+        SubcontractorManager manager = SubcontractorManagerFactory.createManager("John");
         Subcontractor subcontractor = SubcontractorFactory.createSubcontractor("ABC-Electrical",
-                123456789, jobs);
+                manager, jobs);
         Assert.assertEquals("ABC-Electrical", subcontractor.getSubcontractor_name());
 
         //updating variables

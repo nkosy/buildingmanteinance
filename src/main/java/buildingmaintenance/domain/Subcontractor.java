@@ -22,8 +22,8 @@ public class Subcontractor implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long subcontractor_id;
-    private long subcontractorManager_id;
-   // @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne()
+    private SubcontractorManager subcontractorManager;
     private String subcontractor_name;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="subcontractor_id")
@@ -34,7 +34,7 @@ public class Subcontractor implements Serializable{
     
      public Subcontractor(Builder builder){
         this.subcontractor_id = builder.subcontractor_id;
-        this.subcontractorManager_id = builder.subcontractorManager_id;
+        this.subcontractorManager = builder.subcontractorManager;
         this.subcontractor_name = builder.subcontractor_name;
         this.jobs = builder.jobs;
     }
@@ -42,7 +42,7 @@ public class Subcontractor implements Serializable{
     public static class Builder {
 
         private long subcontractor_id;
-        private long subcontractorManager_id;
+        private SubcontractorManager subcontractorManager;
         private String subcontractor_name;
         private List<Job> jobs;
 
@@ -55,13 +55,18 @@ public class Subcontractor implements Serializable{
             return this;
         }
         
-        public Builder subcontractorManager_id(Long value){
+        public Builder subcontracto_id(long value){
             this.subcontractor_id = value;
             return this;
         }
         
         public Builder subcontractor_name(String value){
             this.subcontractor_name = value;
+            return this;
+        }
+
+        public Builder subcontractorManager(SubcontractorManager value){
+            this.subcontractorManager = value;
             return this;
         }
         
@@ -72,7 +77,7 @@ public class Subcontractor implements Serializable{
         
         public Builder copy(Subcontractor value){
             this.subcontractor_id = value.subcontractor_id;
-            this.subcontractorManager_id = value.subcontractorManager_id;
+            this.subcontractorManager = value.subcontractorManager;
             this.subcontractor_name = value.subcontractor_name;
             return this;
         }
@@ -86,8 +91,8 @@ public class Subcontractor implements Serializable{
         return subcontractor_id;
     }
 
-    public long getSubcontractorManager_id() {
-        return subcontractorManager_id;
+    public SubcontractorManager getSubcontractorManager() {
+        return subcontractorManager;
     }
 
     public String getSubcontractor_name() {
@@ -99,27 +104,27 @@ public class Subcontractor implements Serializable{
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + (int) (this.subcontractor_id ^ (this.subcontractor_id >>> 32));
-        hash = 23 * hash + (int) (this.subcontractorManager_id ^ (this.subcontractorManager_id >>> 32));
-        hash = 23 * hash + Objects.hashCode(this.subcontractor_name);
-        hash = 23 * hash + Objects.hashCode(this.jobs);
-        return hash;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Subcontractor)) return false;
+
+        Subcontractor that = (Subcontractor) o;
+
+        if (subcontractor_id != that.subcontractor_id) return false;
+        if (subcontractorManager != null ? !subcontractorManager.equals(that.subcontractorManager) : that.subcontractorManager != null)
+            return false;
+        if (subcontractor_name != null ? !subcontractor_name.equals(that.subcontractor_name) : that.subcontractor_name != null)
+            return false;
+        return !(jobs != null ? !jobs.equals(that.jobs) : that.jobs != null);
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Subcontractor other = (Subcontractor) obj;
-        return true;
+    public int hashCode() {
+        int result = (int) (subcontractor_id ^ (subcontractor_id >>> 32));
+        result = 31 * result + (subcontractorManager != null ? subcontractorManager.hashCode() : 0);
+        result = 31 * result + (subcontractor_name != null ? subcontractor_name.hashCode() : 0);
+        result = 31 * result + (jobs != null ? jobs.hashCode() : 0);
+        return result;
     }
-    
-    
-    
 }

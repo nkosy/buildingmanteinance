@@ -1,6 +1,7 @@
 package buildingmaintenance.conf.factory;
 
 import buildingmaintenance.domain.Subcontractor;
+import buildingmaintenance.domain.SubcontractorManager;
 
 import java.util.List;
 
@@ -10,10 +11,10 @@ import java.util.List;
  */
 public class SubcontractorFactory {
     public static Subcontractor createSubcontractor(String name,
-            long subcontractorManager_id,
+            SubcontractorManager subcontractorManager,
             List jobs){
         Subcontractor subcontractor = new Subcontractor.Builder(name)
-                .subcontractorManager_id(subcontractorManager_id)
+                .subcontractorManager(subcontractorManager)
                 .jobs(jobs)
                 .build();
         return subcontractor;

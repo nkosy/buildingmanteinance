@@ -22,7 +22,7 @@ public class MantainanceLog implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long mantainanceLog_id;
     private String description;
-     @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "mantainanceLog_id")
     private List<Item> items;
     
