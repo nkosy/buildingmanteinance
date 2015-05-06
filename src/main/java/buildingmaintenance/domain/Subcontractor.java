@@ -3,14 +3,7 @@ package buildingmaintenance.domain;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 /*@author       Nkosy
  *@Date         23/042015
@@ -22,7 +15,7 @@ public class Subcontractor implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long subcontractor_id;
-    @OneToOne()
+    @Embedded
     private SubcontractorManager subcontractorManager;
     private String subcontractor_name;
     @OneToMany(cascade = CascadeType.ALL)

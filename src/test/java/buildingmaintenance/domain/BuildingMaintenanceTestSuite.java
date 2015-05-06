@@ -277,29 +277,18 @@ public class BuildingMaintenanceTestSuite {
 
     }
 
-    @Test
-    public void createSubcontractorManager() throws Exception {
-        SubcontractorManager manager = SubcontractorManagerFactory.createManager("John");
-        Assert.assertEquals("John", manager.getSubcontractorManager_name());
-    }
-
-    @Test
-    public void updateSubcontractorManager() throws Exception {
-        SubcontractorManager manager = SubcontractorManagerFactory.createManager("John");
-        Assert.assertEquals("John", manager.getSubcontractorManager_name());
-
-        //updating variables
-        SubcontractorManager newmanager = new SubcontractorManager.Builder(manager.getSubcontractorManager_name())
-                .copy(manager)
-                .subcontractorManager_name("Mike")
-                .build();
-        Assert.assertEquals("Mike", newmanager.getSubcontractorManager_name());
-    }
 
     @Test
     public void createTenant() throws Exception {
         List<OfficeSpace> officespaces = new ArrayList<OfficeSpace>();
-        Tenant tenant = TenantFactory.createTenant("MTN", officespaces);
+        List<MantainanceLog> logs = new ArrayList<MantainanceLog>();
+
+        Map<String, List> tenantValues = new HashMap<String, List>();
+
+        tenantValues.put("officeSpaces", officespaces);
+        tenantValues.put("logs", logs);
+
+        Tenant tenant = TenantFactory.createTenant("MTN", tenantValues);
         Assert.assertEquals("MTN", tenant.getTenant_name());
 
     }
@@ -307,7 +296,13 @@ public class BuildingMaintenanceTestSuite {
     @Test
     public void updateTenant() throws Exception {
         List<OfficeSpace> officespaces = new ArrayList<OfficeSpace>();
-        Tenant tenant = TenantFactory.createTenant("MTN", officespaces);
+        List<MantainanceLog> logs = new ArrayList<MantainanceLog>();
+
+        Map<String, List> tenantValues = new HashMap<String, List>();
+        tenantValues.put("officeSpaces", officespaces);
+        tenantValues.put("logs", logs);
+
+        Tenant tenant = TenantFactory.createTenant("MTN", tenantValues);
 
         //Updating variables
         Tenant newtenant = new Tenant.Builder(tenant.getTenant_name())

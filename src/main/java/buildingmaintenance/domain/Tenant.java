@@ -25,11 +25,15 @@ public class Tenant implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="tenant_id")
     private List<OfficeSpace> officeSpaces;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="tenant_id")
+    private List<MantainanceLog> logs;
+
 
     private Tenant() {
     }
     
-    public Tenant(Builder builder){
+    private Tenant(Builder builder){
         this.tenant_id = builder.tenant_id;
         this.tenant_name = builder.tenant_name;
         this.officeSpaces = builder.officeSpaces;
@@ -40,6 +44,7 @@ public class Tenant implements Serializable {
         private long tenant_id;
         private String tenant_name;
         private List<OfficeSpace> officeSpaces;
+        private List<MantainanceLog> logs;
 
         public Builder(String tenant_name) {
             this.tenant_name = tenant_name;
@@ -59,11 +64,17 @@ public class Tenant implements Serializable {
             this.officeSpaces = value;
             return this;
         }
+
+        public Builder logs(List<MantainanceLog> value){
+            this.logs = value;
+            return this;
+        }
         
         public Builder copy(Tenant value){
             this.tenant_id = value.tenant_id;
             this.tenant_name = value.tenant_name;
             this.officeSpaces = value.officeSpaces;
+            this.logs = value.logs;
             return this;
         }
         
@@ -85,25 +96,26 @@ public class Tenant implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 11 * hash + (int) (this.tenant_id ^ (this.tenant_id >>> 32));
-        hash = 11 * hash + Objects.hashCode(this.tenant_name);
-        hash = 11 * hash + Objects.hashCode(this.officeSpaces);
-        return hash;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Tenant)) return false;
+
+        Tenant tenant = (Tenant) o;
+
+        if (tenant_id != tenant.tenant_id) return false;
+        if (tenant_name != null ? !tenant_name.equals(tenant.tenant_name) : tenant.tenant_name != null) return false;
+        if (officeSpaces != null ? !officeSpaces.equals(tenant.officeSpaces) : tenant.officeSpaces != null)
+            return false;
+        return !(logs != null ? !logs.equals(tenant.logs) : tenant.logs != null);
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Tenant other = (Tenant) obj;
-        return true;
+    public int hashCode() {
+        int result = (int) (tenant_id ^ (tenant_id >>> 32));
+        result = 31 * result + (tenant_name != null ? tenant_name.hashCode() : 0);
+        result = 31 * result + (officeSpaces != null ? officeSpaces.hashCode() : 0);
+        result = 31 * result + (logs != null ? logs.hashCode() : 0);
+        return result;
     }
-    
-    
 }

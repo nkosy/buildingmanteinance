@@ -81,29 +81,27 @@ public class TestBuildingRepo {
 
             Building building = BuildingFactory
                     .createBuilding("NMJ", address, buildingValues);
-        repository.save(building);
+            repository.save(building);
 
-        Assert.assertNotNull(building.getBuilding_id());
-
-        id = building.getBuilding_id();
+            Assert.assertNotNull(building.getBuilding_id());
     }
 
     @Test
-    public void testReadBuildingManager() throws Exception {
+    public void testReadBuilding() throws Exception {
         //Just balancing shit  out no biggy
 
-        for(Building building: repository.findAll())
+        for(Building building: repository.findAll()){
             if(building != null)
-            {
                 id = building.getBuilding_id();
+            break;
+        }
 
-            }
         Building building = repository.findOne(id);
         Assert.assertEquals("NMJ", building.getBuilding_name());
     }
 
     @Test
-    public void testUpdateBuildingManager() throws Exception {
+    public void testUpdateBuilding() throws Exception {
         Map<String, String> addressValues = new HashMap<String, String>();
 
         addressValues.put("streetName", "Dorset");
@@ -113,8 +111,15 @@ public class TestBuildingRepo {
         List<Job> jobs = new ArrayList<Job>();
         List<Level> levels = new ArrayList<Level>();
 
-        Building building= repository.findOne(id);
+        //You know what it is. Balancing shit out
+        for(Building bld: repository.findAll()) {
+            if (bld.getBuilding_id() > 2)
+                id = bld.getBuilding_id();
+            break;
+        }
+
         Building newbuilding = new Building.Builder("Citi-age")
+                .building_id(id)
                 .building_address(address)
                 .jobs(jobs)
                 .levels(levels)
@@ -122,6 +127,22 @@ public class TestBuildingRepo {
 
         repository.save(newbuilding);
         Assert.assertEquals("Citi-age", newbuilding.getBuilding_name());
+    }
+
+    @Test
+    public void testDeleteBuilding() throws Exception {
+        //This is just me balancing shit out.
+
+        for( Building building: repository.findAll()) {
+            if (building.getBuilding_id() > 2)
+            {
+                id = building.getBuilding_id();
+                repository.delete(building);
+            }
+            break;
+        }
+        Building newbuilding = repository.findOne(id);
+        Assert.assertNull(newbuilding);
     }
 
     @After

@@ -48,7 +48,7 @@ public class Level implements Serializable{
             this.level_name = level_name;
         }
         
-        public Builder level_id(int value){
+        public Builder level_id(long value){
             this.level_id=value;
             return this;
         }
@@ -92,26 +92,25 @@ public class Level implements Serializable{
     }
 
     @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + (int) (this.level_id ^ (this.level_id >>> 32));
-        hash = 53 * hash + (int) (this.building_id ^ (this.building_id >>> 32));
-        hash = 53 * hash + Objects.hashCode(this.level_name);
-        hash = 53 * hash + Objects.hashCode(this.officeSpaces);
-        return hash;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Level)) return false;
+
+        Level level = (Level) o;
+
+        if (level_id != level.level_id) return false;
+        if (building_id != level.building_id) return false;
+        if (level_name != null ? !level_name.equals(level.level_name) : level.level_name != null) return false;
+        return !(officeSpaces != null ? !officeSpaces.equals(level.officeSpaces) : level.officeSpaces != null);
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Level other = (Level) obj;
-        return true;
+    public int hashCode() {
+        int result = (int) (level_id ^ (level_id >>> 32));
+        result = 31 * result + (int) (building_id ^ (building_id >>> 32));
+        result = 31 * result + (level_name != null ? level_name.hashCode() : 0);
+        result = 31 * result + (officeSpaces != null ? officeSpaces.hashCode() : 0);
+        return result;
     }
-    
-    
 }

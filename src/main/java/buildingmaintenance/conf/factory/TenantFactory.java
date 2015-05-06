@@ -4,6 +4,7 @@ package buildingmaintenance.conf.factory;
 import buildingmaintenance.domain.Tenant;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -11,9 +12,10 @@ import java.util.List;
  */
 public class TenantFactory {
     public static Tenant createTenant(String name,
-            List officeSpace){
+                                      Map<String, List> values){
         Tenant tenant = new Tenant.Builder(name)
-                .officeSpaces(officeSpace)
+                .officeSpaces(values.get("officeSpaces"))
+                .logs(values.get("logs"))
                 .build();
         return tenant;
     }

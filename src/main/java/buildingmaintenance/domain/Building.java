@@ -20,10 +20,10 @@ public class Building implements Serializable {
 
     //A list of mantainance jobs that have been done on a particular building
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "buildingId")
     private List<Job> jobs;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "buildingID")
     private List<Level> levels;
 
     private Building() {

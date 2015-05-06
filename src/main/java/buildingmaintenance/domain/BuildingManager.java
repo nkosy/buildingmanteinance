@@ -21,7 +21,7 @@ public class BuildingManager implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long managerID;
     private String manager_name;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany
     @JoinColumn(name = "manager_id")
     private List<Building> buildings;
 

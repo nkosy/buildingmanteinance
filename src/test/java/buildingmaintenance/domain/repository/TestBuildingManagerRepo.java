@@ -54,7 +54,6 @@ public class TestBuildingManagerRepo {
                 .createBuildingManager("lil Wayne", buildings);
 
         repository.save(buildingManager);
-        System.out.println(buildingManager.getManager_id());
         Assert.assertNotNull(buildingManager.getManager_id());
 
         id = buildingManager.getManager_id();
@@ -63,13 +62,12 @@ public class TestBuildingManagerRepo {
     @Test
     public void testReadBuildingManager() throws Exception {
         //Just balancing shit  out no biggy
-
-        for(BuildingManager man: repository.findAll())
-            if(man != null)
-            {
+        for(BuildingManager man: repository.findAll()) {
+            if (man != null) {
                 id = man.getManager_id();
-                System.out.println("I found this while scanning the database " + id);
             }
+            break;
+        }
         BuildingManager manager = repository.findOne(id);
         Assert.assertEquals("lil Wayne", manager.getManager_name());
     }
@@ -77,9 +75,15 @@ public class TestBuildingManagerRepo {
     @Test
     public void testUpdateBuildingManager() throws Exception {
         List<Building> buildings = new ArrayList<Building>();
-        BuildingManager manager= repository.findOne(id);
+        //You know what it is. Balancing shit out
+        for(BuildingManager man: repository.findAll()) {
+            if (man.getManager_id() > 2)
+                id = man.getManager_id();
+            break;
+        }
+
         BuildingManager newmanager = new BuildingManager.Builder("George")
-                .manager_id((long)1)
+                .manager_id(id)
                 .buildings(buildings)
                 .build();
 
@@ -92,14 +96,14 @@ public class TestBuildingManagerRepo {
         //This is just me balancing shit out.
 
         for( BuildingManager man: repository.findAll()) {
-            if (man.getManager_id() > 2)
+            if (man.getManager_id() > 2) {
+                id = man.getManager_id();
                 repository.delete(man);
-
-            repository.delete(man);
-            BuildingManager newmanager = repository.findOne(man.getManager_id());
-            Assert.assertNull(newmanager);
+            }
             break;
         }
+        BuildingManager newmanager = repository.findOne(id);
+        Assert.assertNull(newmanager);
     }
 
 
