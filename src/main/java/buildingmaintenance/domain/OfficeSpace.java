@@ -44,7 +44,7 @@ public class OfficeSpace implements Serializable {
             this.officeSpace_no = officeSpace_no;
         }
 
-        public Builder officeSpace_id(Long value) {
+        public Builder officeSpace_id(long value) {
             this.officeSpace_id = value;
             return this;
         }

@@ -46,7 +46,7 @@ public class TestLevelRepo {
     }
 
     @Test
-    public void testCreate() throws Exception {
+    public void testCreateLevel() throws Exception {
         List<OfficeSpace> officeSpaces = new ArrayList<OfficeSpace>();
         Level level = LevelFactory.createLevel("Third Floor", officeSpaces);
         repository.save(level);

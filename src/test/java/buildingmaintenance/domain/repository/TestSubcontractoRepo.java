@@ -34,8 +34,6 @@ public class TestSubcontractoRepo {
     private long id;
     @Autowired
     private SubcontractorRepository repository;
-    @Autowired
-    private BuildingManagerRepository managerRepository;
 
     @Before
     public void setUp() throws Exception {
@@ -64,6 +62,41 @@ public class TestSubcontractoRepo {
 
         repository.save(subcontractor);
         Assert.assertNotNull(subcontractor.getSubcontractor_id());
+    }
+
+    @Test
+    public void testUpdateTenant() throws Exception {
+        List<Job> jobs = new ArrayList<Job>();
+
+        //You know what it is. Balancing shit out
+        for(Subcontractor sub: repository.findAll())
+            if(sub.getSubcontractor_id() > 2)
+                id = sub.getSubcontractor_id();
+
+        Subcontractor newsub = new Subcontractor.Builder("Dry Force")
+                .subcontractor_id(id)
+                .subcontractor_name("Dry Force")
+                .jobs(jobs)
+                .build();
+
+        repository.save(newsub);
+        Assert.assertEquals("Dry Force", newsub.getSubcontractor_name());
+    }
+
+    @Test
+    public void testDeleteSubcontractor() throws Exception {
+        //This is just me balancing shit out.
+
+        for( Subcontractor sub: repository.findAll()) {
+            if (sub.getSubcontractor_id() > 2)
+            {
+                id = sub.getSubcontractor_id();
+                repository.delete(sub);
+            }
+            break;
+        }
+        Subcontractor newsub = repository.findOne(id);
+        Assert.assertNull(newsub);
     }
 
 

@@ -22,7 +22,7 @@ public class Facility implements Serializable {
     private long facility_id;
     private String facility_name;
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "officeSpace_id")
+    @JoinColumn(name = "office_space_id")
     private List<Item> items;
 
     private Facility() {

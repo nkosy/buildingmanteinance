@@ -48,11 +48,6 @@ public class Subcontractor implements Serializable{
             return this;
         }
         
-        public Builder subcontracto_id(long value){
-            this.subcontractor_id = value;
-            return this;
-        }
-        
         public Builder subcontractor_name(String value){
             this.subcontractor_name = value;
             return this;
