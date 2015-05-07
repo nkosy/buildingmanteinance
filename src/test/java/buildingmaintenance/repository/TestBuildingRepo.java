@@ -1,4 +1,4 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.AddressFactory;
@@ -7,7 +7,6 @@ import buildingmaintenance.domain.Address;
 import buildingmaintenance.domain.Building;
 import buildingmaintenance.domain.Job;
 import buildingmaintenance.domain.Level;
-import buildingmaintenance.repository.BuildingRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

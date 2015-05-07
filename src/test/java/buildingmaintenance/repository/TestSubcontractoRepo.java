@@ -1,16 +1,11 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.SubcontractorFactory;
 import buildingmaintenance.conf.factory.SubcontractorManagerFactory;
-import buildingmaintenance.domain.BuildingManager;
 import buildingmaintenance.domain.Job;
 import buildingmaintenance.domain.Subcontractor;
 import buildingmaintenance.domain.SubcontractorManager;
-import buildingmaintenance.repository.BuildingManagerRepository;
-import buildingmaintenance.repository.BuildingRepository;
-import buildingmaintenance.repository.LevelRepository;
-import buildingmaintenance.repository.SubcontractorRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

@@ -1,11 +1,9 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.FacilityFactory;
 import buildingmaintenance.domain.Facility;
 import buildingmaintenance.domain.Item;
-import buildingmaintenance.domain.Tenant;
-import buildingmaintenance.repository.FacilityRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,9 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by Nkosy on 2015/05/06.
@@ -106,7 +102,6 @@ public class TestFacilityRepo {
         Facility newfacility = repository.findOne(id);
         Assert.assertNull(newfacility);
     }
-
 
     @After
     public void tearDown() throws Exception {

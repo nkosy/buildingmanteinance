@@ -1,11 +1,9 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.MantainanceLogFactory;
 import buildingmaintenance.domain.Item;
-import buildingmaintenance.domain.Level;
 import buildingmaintenance.domain.MantainanceLog;
-import buildingmaintenance.repository.MainteinanceLogRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

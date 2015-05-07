@@ -1,11 +1,10 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.TenantFactory;
 import buildingmaintenance.domain.MantainanceLog;
 import buildingmaintenance.domain.OfficeSpace;
 import buildingmaintenance.domain.Tenant;
-import buildingmaintenance.repository.TenantRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

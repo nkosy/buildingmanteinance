@@ -132,10 +132,7 @@ public class BuildingMaintenanceTestSuite {
 
     @Test
     public void testCreateItem() throws Exception {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-
         Calendar cal = Calendar.getInstance();
-        System.out.println(dateFormat.format(cal.getTime()));
 
         Item item = ItemFactory.createItem("Sink", 800.00, cal.getTime());
         Assert.assertEquals(cal.getTime(), item.getLast_mantained());

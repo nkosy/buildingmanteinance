@@ -1,10 +1,9 @@
-package buildingmaintenance.domain.repository;
+package buildingmaintenance.repository;
 
 import buildingmaintenance.BuildingmaintenanceApplication;
 import buildingmaintenance.conf.factory.BuildingManagerFactory;
 import buildingmaintenance.domain.Building;
 import buildingmaintenance.domain.BuildingManager;
-import buildingmaintenance.repository.BuildingManagerRepository;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -13,7 +12,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.ArrayList;
@@ -55,8 +53,6 @@ public class TestBuildingManagerRepo {
 
         repository.save(buildingManager);
         Assert.assertNotNull(buildingManager.getManager_id());
-
-        id = buildingManager.getManager_id();
     }
 
     @Test
