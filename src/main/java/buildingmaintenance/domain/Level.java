@@ -23,7 +23,6 @@ public class Level implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long level_id;
-    private long building_id;
     private String level_name;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name="level_id")
@@ -79,9 +78,7 @@ public class Level implements Serializable{
         return level_id;
     }
 
-    public long getBuilding_id() {
-        return building_id;
-    }
+
 
     public String getLevel_name() {
         return level_name;
@@ -99,7 +96,7 @@ public class Level implements Serializable{
         Level level = (Level) o;
 
         if (level_id != level.level_id) return false;
-        if (building_id != level.building_id) return false;
+
         if (level_name != null ? !level_name.equals(level.level_name) : level.level_name != null) return false;
         return !(officeSpaces != null ? !officeSpaces.equals(level.officeSpaces) : level.officeSpaces != null);
 
@@ -108,7 +105,6 @@ public class Level implements Serializable{
     @Override
     public int hashCode() {
         int result = (int) (level_id ^ (level_id >>> 32));
-        result = 31 * result + (int) (building_id ^ (building_id >>> 32));
         result = 31 * result + (level_name != null ? level_name.hashCode() : 0);
         result = 31 * result + (officeSpaces != null ? officeSpaces.hashCode() : 0);
         return result;

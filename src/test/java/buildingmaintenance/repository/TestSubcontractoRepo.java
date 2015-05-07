@@ -68,12 +68,16 @@ public class TestSubcontractoRepo {
             if(sub.getSubcontractor_id() > 2)
                 id = sub.getSubcontractor_id();
 
+        SubcontractorManager manager = SubcontractorManagerFactory.createManager("Sponge Bob");
+
         Subcontractor newsub = new Subcontractor.Builder("Dry Force")
                 .subcontractor_id(id)
+                .subcontractorManager(manager)
                 .subcontractor_name("Dry Force")
                 .jobs(jobs)
                 .build();
-
+        System.out.println("The name that will go is " +
+                newsub.getSubcontractorManager().getSubcontractorManager_name());
         repository.save(newsub);
         Assert.assertEquals("Dry Force", newsub.getSubcontractor_name());
     }

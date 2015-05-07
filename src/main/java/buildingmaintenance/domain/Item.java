@@ -26,6 +26,7 @@ public class Item implements Serializable {
 
     public Item(Builder builder) {
         item_id = builder.item_id;
+        cost = builder.cost;
         item_name = builder.item_name;
         last_mantained = builder.last_mantained;
 

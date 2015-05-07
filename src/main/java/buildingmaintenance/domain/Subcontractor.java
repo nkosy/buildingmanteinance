@@ -29,6 +29,7 @@ public class Subcontractor implements Serializable{
         this.subcontractor_id = builder.subcontractor_id;
         this.subcontractorManager = builder.subcontractorManager;
         this.subcontractor_name = builder.subcontractor_name;
+         this.subcontractorManager = builder.subcontractorManager;
         this.jobs = builder.jobs;
     }
 

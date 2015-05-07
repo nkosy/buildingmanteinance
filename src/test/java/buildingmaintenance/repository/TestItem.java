@@ -38,6 +38,7 @@ public class TestItem {
         if(found == false) {
             Calendar cal = Calendar.getInstance();
             Item item = ItemFactory.createItem("Sink", (double) 800, cal.getTime());
+            System.out.println("This is the cost that I am persisting " + item.getCost());
 
             repository.save(item);
             repository.save(item);
