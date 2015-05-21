@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee5a48d-1200-44b3-a417-c8bc6afe3c00" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -157,9 +156,11 @@
       <file leaf-file-name="TestBuildingRepo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56231004">
+            <state vertical-scroll-proportion="0.41294643">
               <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
+              <folding>
+                <element signature="e#1519#1535#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -195,7 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/OfficeSpace.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/repository/TestOfficeSpaceRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/repository/TenantRepository.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/repository/TestTenantRepo.java" />
@@ -246,6 +246,7 @@
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/JobServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ItemServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java" />
       </list>
     </option>
   </component>
@@ -844,7 +845,7 @@
       <workItem from="1432051330206" duration="562000" />
       <workItem from="1432052490538" duration="3308000" />
       <workItem from="1432121925927" duration="6010000" />
-      <workItem from="1432142065002" duration="33294000" />
+      <workItem from="1432142065002" duration="33624000" />
     </task>
     <task id="LOCAL-00001" summary="found a way to work around the database. Everything looks good">
       <created>1430829895803</created>
@@ -888,11 +889,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432195973226</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="App two apis. Everthing passes">
+      <created>1432203021927</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1432203021927</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100214000" />
+    <option name="totallyTimeSpent" value="100544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
@@ -902,14 +909,14 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27126807" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34319526" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23434992" sideWeight="0.5060698" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42536116" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2352071" sideWeight="0.49707174" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42536116" sideWeight="0.49544764" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23434992" sideWeight="0.4939302" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32094082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32094082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.107739" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21396054" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -974,7 +981,8 @@
     <MESSAGE value="added the model" />
     <MESSAGE value="One Home page service with no test yet though" />
     <MESSAGE value="All Services Test pass. All is good" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Services Test pass. All is good" />
+    <MESSAGE value="App two apis. Everthing passes" />
+    <option name="LAST_COMMIT_MESSAGE" value="App two apis. Everthing passes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1457,9 +1465,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56231004">
+        <state vertical-scroll-proportion="0.41294643">
           <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#1519#1535#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
