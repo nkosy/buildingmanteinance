@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee5a48d-1200-44b3-a417-c8bc6afe3c00" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/BuildingManagerService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/BuildingManagerServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/BuildingManagerServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/BuildingServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/ItemService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/ItemServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ItemServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/JobService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/JobServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/JobServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/ManteinanceLogService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/ManteinanceLogServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ManteinanceLogServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/SubcontractorService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/SubcontractorServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/SubcontractorServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/TenantService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/TenantServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/TenantServiceTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/buildingmaintenance/services/BuildingService.java" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/BuildingService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/buildingmaintenance/services/Impl/BuildingServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/BuildingServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/BuildingMaintenanceTestSuite.java" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/BuildingMaintenanceTestSuite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/HomePage.java" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/HomePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/MantainanceLog.java" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/MantainanceLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/MantainanceLogFactory.java" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/conf/factory/MantainanceLogFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestMaintenanceLogRepo.java" afterPath="$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestMaintenanceLogRepo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -118,13 +91,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemServiceTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ItemServiceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ItemServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7112462">
+            <state vertical-scroll-proportion="0.0">
               <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuildingManagerPage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#777#778#0" expanded="true" />
+                <element signature="e#824#825#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,26 +142,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JobServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/JobServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="22" selection-start-line="40" selection-start-column="8" selection-end-line="52" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JobService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/service/JobService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="39" selection-start-line="11" selection-start-column="3" selection-end-line="13" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BuildingServiceTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/service/BuildingServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -183,6 +150,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestBuildingRepo.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.56231004">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -218,7 +195,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/repository/TestLevelRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/domain/OfficeSpace.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/domain/repository/TestOfficeSpaceRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/repository/TenantRepository.java" />
@@ -269,6 +245,7 @@
         <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/service/Impl/ItemServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/JobServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ItemServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java" />
       </list>
     </option>
   </component>
@@ -355,6 +332,14 @@
               <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildingmaintenance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -370,25 +355,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="buildingmaintenance" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="buildingmanteinance" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -397,6 +364,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="buildingmaintenance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="repository" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildingmaintenance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="buildingmanteinance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -428,32 +413,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.buildingmaintenance in buildingmaintenance">
-    <configuration default="false" name="JobServiceTest.testGetJobByDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="buildingmaintenance.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="buildingmaintenance" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="buildingmaintenance.service" />
-      <option name="MAIN_CLASS_NAME" value="buildingmaintenance.service.JobServiceTest" />
-      <option name="METHOD_NAME" value="testGetJobByDate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
     <configuration default="false" name="TenantServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -556,6 +515,13 @@
       </option>
       <envs />
       <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BuildingmaintenanceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="buildingmaintenance.BuildingmaintenanceApplication" />
+      <module name="buildingmaintenance" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -836,19 +802,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.TestBuildingManagerRepo" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.JobServiceTest.testGetJobByDate" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.TenantServiceTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.buildingmaintenance in buildingmaintenance" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.buildingmaintenance.service in buildingmaintenance" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ItemServiceTest.testGetItemByCost" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TenantServiceTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.buildingmaintenance in buildingmaintenance" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.buildingmaintenance.service in buildingmaintenance" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.ItemServiceTest.testGetItemByCost" />
+      <item index="5" class="java.lang.String" itemvalue="Spring Boot.BuildingmaintenanceApplication" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.buildingmaintenance in buildingmaintenance" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ItemServiceTest.testGetItemByCost" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.buildingmaintenance.service in buildingmaintenance" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TenantServiceTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.JobServiceTest.testGetJobByDate" />
+        <item index="1" class="java.lang.String" itemvalue="Spring Boot.BuildingmaintenanceApplication" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.ItemServiceTest.testGetItemByCost" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.buildingmaintenance.service in buildingmaintenance" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TenantServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -878,7 +844,7 @@
       <workItem from="1432051330206" duration="562000" />
       <workItem from="1432052490538" duration="3308000" />
       <workItem from="1432121925927" duration="6010000" />
-      <workItem from="1432142065002" duration="29148000" />
+      <workItem from="1432142065002" duration="33294000" />
     </task>
     <task id="LOCAL-00001" summary="found a way to work around the database. Everything looks good">
       <created>1430829895803</created>
@@ -916,11 +882,17 @@
       <option name="project" value="LOCAL" />
       <updated>1432125042549</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="All Services Test pass. All is good">
+      <created>1432195973226</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1432195973226</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96068000" />
+    <option name="totallyTimeSpent" value="100214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
@@ -1001,7 +973,8 @@
     <MESSAGE value="Fixed the variable issue. Everything is working" />
     <MESSAGE value="added the model" />
     <MESSAGE value="One Home page service with no test yet though" />
-    <option name="LAST_COMMIT_MESSAGE" value="One Home page service with no test yet though" />
+    <MESSAGE value="All Services Test pass. All is good" />
+    <option name="LAST_COMMIT_MESSAGE" value="All Services Test pass. All is good" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1014,13 +987,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/repository/ItemRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestFacilityRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1068,14 +1034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.75757575">
           <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1477,11 +1435,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/service/ItemServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7112462">
+        <state vertical-scroll-proportion="0.0">
           <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/buildingmaintenance/api/BuildingManagerPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#824#825#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/buildingmaintenance/repository/TestBuildingRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.56231004">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
