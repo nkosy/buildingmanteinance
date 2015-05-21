@@ -1,21 +1,13 @@
 package buildingmaintenance.api;
 
-import buildingmaintenance.conf.factory.AddressFactory;
-import buildingmaintenance.conf.factory.BuildingFactory;
-import buildingmaintenance.domain.Address;
 import buildingmaintenance.domain.Building;
-import buildingmaintenance.domain.Job;
-import buildingmaintenance.domain.Level;
-import buildingmaintenance.services.BuildingService;
+import buildingmaintenance.service.BuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by nkosi on 2015/05/19.

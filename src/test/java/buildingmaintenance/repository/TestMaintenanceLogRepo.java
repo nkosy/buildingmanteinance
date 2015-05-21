@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -37,8 +38,9 @@ public class TestMaintenanceLogRepo {
                 found = true;
         if(found == false) {
             List<Item> items = new ArrayList<Item>();
+            Calendar cal = Calendar.getInstance();
             MantainanceLog thelog = MantainanceLogFactory.createMantainanceLog("Light Switch Not working",
-                    items);
+                    cal.getTime(), items);
             repository.save(thelog);
             repository.save(thelog);
         }
@@ -47,8 +49,9 @@ public class TestMaintenanceLogRepo {
     @Test
     public void testCreateLog() throws Exception {
         List<Item> items = new ArrayList<Item>();
+        Calendar cal = Calendar.getInstance();
         MantainanceLog thelog = MantainanceLogFactory.createMantainanceLog("Light Switch Not working",
-                items);
+                cal.getTime(), items);
         repository.save(thelog);
 
         Assert.assertNotNull(thelog.getMantainanceLog_id());

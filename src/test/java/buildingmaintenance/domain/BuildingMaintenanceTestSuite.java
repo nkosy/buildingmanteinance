@@ -205,17 +205,20 @@ public class BuildingMaintenanceTestSuite {
 
     @Test
     public void createMantainaceLog() throws Exception {
+
+        Calendar cal = Calendar.getInstance();
         List<Item> items = new ArrayList<Item>();
         MantainanceLog log = MantainanceLogFactory.createMantainanceLog("Light Switch Not working",
-                items);
+                cal.getTime(), items);
         Assert.assertEquals("Light Switch Not working", log.getDescription());
     }
 
     @Test
     public void updateMantainaceLog() throws Exception {
         List<Item> items = new ArrayList<Item>();
+        Calendar cal = Calendar.getInstance();
         MantainanceLog log = MantainanceLogFactory.createMantainanceLog("Light Switch Not working",
-                items);
+                cal.getTime(), items);
 
         //Updating variables
         MantainanceLog newlog = new MantainanceLog.Builder(log.getDescription())

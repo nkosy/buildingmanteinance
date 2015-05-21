@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - buildingmantainance@localhost [2]" uuid="22007a50-3601-4987-baec-126304fd43d7">
-    <database-info product="MySQL" version="5.5.43" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.34 ( Revision: jess.balint@oracle.com-20141014163213-wqbwpf1ok2kvo1om )">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
-    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <schema name="" catalog="buildingmantainance"/>
     <schema name="" catalog="information_schema"/>
     <schema name="" catalog="mainteinancedb"/>
@@ -47,11 +47,11 @@
       <column name="item_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="last_mantained" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="job_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
-      <column name="mantainance_log_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <column name="office_space_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="mantainance_log_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="item_id"/>
-      <foreign-key name="FK_myn84w3uirrnyv9fpj0t9jycd" columns="office_space_id" ref-table="facility" ref-schema="" ref-catalog="buildingmantainance" ref-columns="facility_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="FK_rpiy98t9j8twgcpop0runopon" columns="mantainance_log_id" ref-table="mantainance_log" ref-schema="" ref-catalog="buildingmantainance" ref-columns="mantainance_log_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_myn84w3uirrnyv9fpj0t9jycd" columns="office_space_id" ref-table="facility" ref-schema="" ref-catalog="buildingmantainance" ref-columns="facility_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="FK_sl1jq34mncakcxbpi9o8nbn11" columns="job_id" ref-table="job" ref-schema="" ref-catalog="buildingmantainance" ref-columns="job_id" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="FK_myn84w3uirrnyv9fpj0t9jycd" unique="false" columns="office_space_id"/>
       <index name="FK_rpiy98t9j8twgcpop0runopon" unique="false" columns="mantainance_log_id"/>
@@ -82,6 +82,7 @@
     <table name="mantainance_log" schema="" catalog="buildingmantainance" type="TABLE">
       <column name="mantainance_log_id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5" autoIncrement="true"/>
       <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="log_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
       <column name="tenant_id" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
       <primary-key name="PRIMARY" columns="mantainance_log_id"/>
       <foreign-key name="FK_avfq77qwsj2f5yixch7b4j2ug" columns="tenant_id" ref-table="tenant" ref-schema="" ref-catalog="buildingmantainance" ref-columns="tenant_id" update-rule="3" delete-rule="3" deferrability="2"/>

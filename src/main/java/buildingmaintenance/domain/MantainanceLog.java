@@ -1,6 +1,7 @@
 package buildingmaintenance.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import javax.persistence.CascadeType;
@@ -22,6 +23,7 @@ public class MantainanceLog implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long mantainanceLog_id;
     private String description;
+    private Date logDate;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "mantainanceLog_id")
     private List<Item> items;
@@ -35,12 +37,14 @@ public class MantainanceLog implements Serializable {
         this.mantainanceLog_id = builder.mantainanceLog_id;
         this.description = builder.description;
         this.items = builder.items;
+        this.logDate = builder.logDate;
     }
 
     public static class Builder {
 
         private long mantainanceLog_id;
         private String description;
+        private Date logDate;
         private List<Item> items;
 
         public Builder(String description) {
@@ -49,6 +53,11 @@ public class MantainanceLog implements Serializable {
         
          public Builder description(String value){
             this.description = value;
+            return this;
+         }
+
+        public Builder logDate(Date value){
+            this.logDate = value;
             return this;
         }
          
@@ -60,6 +69,7 @@ public class MantainanceLog implements Serializable {
         public Builder copy(MantainanceLog value){
             this.mantainanceLog_id = value.mantainanceLog_id;
             this.description = value.description;
+            this.logDate = value.logDate;
             this.items = value.items;
             return this;
         }
@@ -77,30 +87,32 @@ public class MantainanceLog implements Serializable {
         return description;
     }
 
+    public Date getLogDate() {return logDate;}
+
     public List<Item> getItems() {
         return items;
     }
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + (int) (this.mantainanceLog_id ^ (this.mantainanceLog_id >>> 32));
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + Objects.hashCode(this.items);
-        return hash;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MantainanceLog that = (MantainanceLog) o;
+
+        if (mantainanceLog_id != that.mantainanceLog_id) return false;
+        if (!description.equals(that.description)) return false;
+        if (!logDate.equals(that.logDate)) return false;
+        return items.equals(that.items);
+
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final MantainanceLog other = (MantainanceLog) obj;
-        return true;
+    public int hashCode() {
+        int result = (int) (mantainanceLog_id ^ (mantainanceLog_id >>> 32));
+        result = 31 * result + description.hashCode();
+        result = 31 * result + logDate.hashCode();
+        result = 31 * result + items.hashCode();
+        return result;
     }
-    
-    
 }

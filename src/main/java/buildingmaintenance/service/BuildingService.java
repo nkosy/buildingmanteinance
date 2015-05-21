@@ -1,4 +1,4 @@
-package buildingmaintenance.services;
+package buildingmaintenance.service;
 
 import buildingmaintenance.domain.Building;
 
@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface BuildingService {
      List<Building> getAllBuildings();
+     Building getBuildingByID(Long id);
+     Building getBuildingByName(String name);
 }
