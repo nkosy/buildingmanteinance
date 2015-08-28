@@ -1,7 +1,9 @@
 package buildingmaintenance.service.Impl;
 
+import buildingmaintenance.conf.factory.BuildingManagerFactory;
 import buildingmaintenance.domain.Building;
 import buildingmaintenance.domain.BuildingManager;
+import buildingmaintenance.model.BuildingManagerResource;
 import buildingmaintenance.repository.BuildingManagerRepository;
 import buildingmaintenance.service.BuildingManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +54,12 @@ public class BuildingManagerServiceImpl implements BuildingManagerService{
         if(result == null)
             System.out.println("Found Nothing!");
         return result;
+    }
+
+    @Override
+    public void addManager(BuildingManagerResource manager) {
+        BuildingManager newManager = BuildingManagerFactory
+                .createBuildingManager(manager.getManager_name(), manager.getBuildings());
+        repository.save(newManager);
     }
 }

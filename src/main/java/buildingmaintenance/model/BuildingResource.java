@@ -1,36 +1,30 @@
-package buildingmaintenance.domain;
+package buildingmaintenance.model;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import buildingmaintenance.domain.Address;
+import buildingmaintenance.domain.Job;
+import buildingmaintenance.domain.Level;
+
 import java.util.List;
 
-/*@author       Nkosy
- *@Date         23/042015
- *@Description  An entity that stores the details of a building 
+/**
+ * Created by nkosi on 2015/08/23.
  */
-@javax.persistence.Entity
-public class Building implements Serializable {
+public class BuildingResource {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long buildingID;
+    private long resID;
     private String building_name;
-    @Embedded
+
     private Address building_address;
 
     //A list of mantainance jobs that have been done on a particular building
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "buildingId")
     private List<Job> jobs;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "buildingID")
     private List<Level> levels;
 
-    private Building() {
+    private BuildingResource() {
     }
 
-    private Building(Builder builder) {
-        this.buildingID = builder.buildingID;
+    private BuildingResource(Builder builder) {
+        this.resID = builder.resID;
         this.building_name = builder.building_name;
         this.jobs = builder.jobs;
         this.building_address = builder.building_address;
@@ -40,7 +34,7 @@ public class Building implements Serializable {
 
     public static class Builder {
 
-        private long buildingID;
+        private long resID;
 
         private String building_name;
         private Address building_address;
@@ -51,21 +45,21 @@ public class Building implements Serializable {
             this.building_name = name;
         }
 
-        public Builder building_id(Long value) {
-            this.buildingID = value;
+        public Builder res_id(Long value) {
+            this.resID = value;
             return this;
         }
 
         public Builder building_name(String value){
-         this.building_name = value;
-         return this;
-         }
+            this.building_name = value;
+            return this;
+        }
         public Builder building_address(Address value) {
             this.building_address = value;
             return this;
         }
 
-       public Builder jobs(List<Job> value) {
+        public Builder jobs(List<Job> value) {
             this.jobs = value;
             return this;
         }
@@ -75,8 +69,8 @@ public class Building implements Serializable {
             return this;
         }
 
-        public Builder copy(Building value) {
-            this.buildingID = value.buildingID;
+        public Builder copy(BuildingResource value) {
+            this.resID = value.resID;
 
             this.building_name = value.building_name;
             this.jobs = value.jobs;
@@ -84,13 +78,14 @@ public class Building implements Serializable {
             return this;
         }
 
-        public Building build() {
-            return new Building(this);
+        public BuildingResource build() {
+            return new BuildingResource(this);
         }
     }
 
-    public long getBuilding_id() {
-        return buildingID;
+
+    public long getResID() {
+        return resID;
     }
 
     public String getBuilding_name() {
@@ -107,5 +102,4 @@ public class Building implements Serializable {
     public List<Level> getLevels() {
         return levels;
     }
-    
 }

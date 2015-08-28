@@ -103,5 +103,4 @@ public class BuildingManager implements Serializable {
         final BuildingManager other = (BuildingManager) obj;
         return true;
     }
-
 }
