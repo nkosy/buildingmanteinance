@@ -35,9 +35,9 @@ public class BuildingManagerPage {
                     .buildings(manager.getBuildings())
                     .build();
             Link buildings = new
-
                     Link("http://localhost:8080/manager/"+res.getResID())
                     .withRel("buildings");
+
             res.add(buildings);
             hateos.add(res);
         }
@@ -45,22 +45,47 @@ public class BuildingManagerPage {
     }
 
     @RequestMapping(value = "/managerids", method = RequestMethod.GET)
-    public BuildingManager getManagerByID(
+    public List<BuildingManagerResource>  getManagerByID(
             @RequestParam(value =  "id", defaultValue = "1") Long id){
-        return service.getManagerByID(id);
+
+        BuildingManager manager =  service.getManagerByID(id);
+        List<BuildingManagerResource> hateos = new ArrayList<>();
+
+        BuildingManagerResource res = new BuildingManagerResource
+                .Builder(manager.getManager_name())
+                .resID(manager.getManager_id())
+                .buildings(manager.getBuildings())
+                .build();
+        Link buildings = new
+                Link("http://localhost:8080/manager/"+res.getResID())
+                .withRel("buildings");
+
+        res.add(buildings);
+        hateos.add(res);
+        return  hateos;
     }
 
     @RequestMapping(value = "/managernames", method = RequestMethod.GET)
-    public BuildingManager getManagerByName(
+    public List<BuildingManagerResource> getManagerByName(
             @RequestParam(value =  "name", defaultValue = "lil Wayne") String name){
-        return service.getManagerByName(name);
+
+        BuildingManager manager =  service.getManagerByName(name);
+        List<BuildingManagerResource> hateos = new ArrayList<>();
+
+        BuildingManagerResource res = new BuildingManagerResource
+                .Builder(manager.getManager_name())
+                .resID(manager.getManager_id())
+                .buildings(manager.getBuildings())
+                .build();
+        Link buildings = new
+                Link("http://localhost:8080/manager/"+res.getResID())
+                .withRel("buildings");
+        res.add(buildings);
+        hateos.add(res);
+        return  hateos;
     }
 
-    /*
-    *  List<Building> buildings = new ArrayList<Building>();
-        BuildingManager buildingManager = BuildingManagerFactory
-                .createBuildingManager("lil Wayne", buildings);
-*/
+
     @RequestMapping(value = "/newmanager", method = RequestMethod.POST)
     public void AddManager(
             @RequestParam(value =  "newManager") BuildingManagerResource newManager){

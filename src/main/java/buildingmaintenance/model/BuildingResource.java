@@ -3,13 +3,14 @@ package buildingmaintenance.model;
 import buildingmaintenance.domain.Address;
 import buildingmaintenance.domain.Job;
 import buildingmaintenance.domain.Level;
+import org.springframework.hateoas.ResourceSupport;
 
 import java.util.List;
 
 /**
  * Created by nkosi on 2015/08/23.
  */
-public class BuildingResource {
+public class BuildingResource extends ResourceSupport{
 
     private long resID;
     private String building_name;

@@ -22,7 +22,4 @@ public class HomePage {
         return "Welcome to the building manager app";
     }
 
-    @RequestMapping(value = "/buildings",method = RequestMethod.GET)
-    public  List<Building> getAllBuildings(){return service.getAllBuildings();}
-
 }
