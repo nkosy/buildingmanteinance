@@ -20,18 +20,9 @@ public class BuildingManagerServiceImpl implements BuildingManagerService{
     @Autowired
     BuildingManagerRepository repository;
 
-    @Override
-    public List<BuildingManager> getAllManagers() {
-        List<BuildingManager> managers = new ArrayList<>();
-        Iterable<BuildingManager> values = repository.findAll();
-        for (BuildingManager value : values) {
-            managers.add(value);
-        }
-        return managers;
-    }
 
     @Override
-    public BuildingManager getManagerByID(Long id) {
+    public BuildingManager findById(Long id) {
         if(repository.findOne(id) == null)
             return null;
         else
@@ -39,10 +30,10 @@ public class BuildingManagerServiceImpl implements BuildingManagerService{
     }
 
     @Override
-    public BuildingManager getManagerByName(String name) {
+    public BuildingManager findByName(String name) {
         List<BuildingManager> managers = new ArrayList<>();
         BuildingManager result = null;
-        managers = getAllManagers();
+        managers = findAll();
         for(BuildingManager themanager: managers)
         {
             if(themanager.getManager_name().contains(name))
@@ -57,9 +48,27 @@ public class BuildingManagerServiceImpl implements BuildingManagerService{
     }
 
     @Override
-    public void addManager(BuildingManagerResource manager) {
-        BuildingManager newManager = BuildingManagerFactory
-                .createBuildingManager(manager.getManager_name(), manager.getBuildings());
-        repository.save(newManager);
+    public BuildingManager save(BuildingManager entity) {
+        return repository.save(entity);
+    }
+
+    @Override
+    public BuildingManager update(BuildingManager entity) {
+        return null;
+    }
+
+    @Override
+    public void delete(BuildingManager entity) {
+
+    }
+
+    @Override
+    public List findAll() {
+        List<BuildingManager> managers = new ArrayList<>();
+        Iterable<BuildingManager> values = repository.findAll();
+        for (BuildingManager value : values) {
+            managers.add(value);
+        }
+        return managers;
     }
 }
