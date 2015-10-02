@@ -40,7 +40,7 @@ public class BuildingManagerPage {
                     .buildings(manager.getBuildings())
                     .build();
             Link buildings = new
-                    Link("buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
+                    Link("http://buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
                     .withRel("buildings");
 
             res.add(buildings);
@@ -62,7 +62,7 @@ public class BuildingManagerPage {
                 .buildings(manager.getBuildings())
                 .build();
         Link buildings = new
-                Link("buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
+                Link("http://buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
                 .withRel("buildings");
 
         res.add(buildings);
@@ -83,7 +83,7 @@ public class BuildingManagerPage {
                 .buildings(manager.getBuildings())
                 .build();
         Link buildings = new
-                Link("buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
+                Link("http://buildingmanteinance-nkosi.rhcloud.com/api/manager/"+res.getResID())
                 .withRel("buildings");
         res.add(buildings);
         hateos.add(res);
@@ -103,7 +103,7 @@ public class BuildingManagerPage {
         service.save(manager);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/androiduser/{id}").buildAndExpand(manager.getManager_id()).toUri());
+        headers.setLocation(ucBuilder.path("/managerids/{id}").buildAndExpand(manager.getManager_id()).toUri());
         return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 }

@@ -21,5 +21,4 @@ public class HomePage {
     public String Index(){
         return "Welcome to the building manager app";
     }
-
 }
